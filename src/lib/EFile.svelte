@@ -5,7 +5,7 @@
   import "./icons/IconContentSave.svelte";
   import "./icons/IconCloseThick.svelte";
   import "./components/ConfirmDialog.svelte";
-
+  
   export let guid;
   let delModel = false;
 
@@ -35,12 +35,8 @@
     </span>
   {/if}
 </div>
-{delModel}
-<confirm-dialog
-  bind:delModel
-  message="確定要刪除這個檔案嗎?"
-  on:cancel={() => (delModel = false)}
-/>
+
+<confirm-dialog></confirm-dialog>
 
 <!-- <div class="modal {delModel ? 'is-active' : ''}">
   <div class="modal-background" />

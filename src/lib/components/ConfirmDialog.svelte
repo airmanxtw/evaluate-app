@@ -2,13 +2,12 @@
 
 <script>
   import { createEventDispatcher } from "svelte";
-  export let delModel = false;
-  export let message = null;
+  export let delModel = true;
+  export let message = "hello";
   const dispatch = createEventDispatcher();
 </script>
-{delModel}123
 
-<!-- <div class="modal {delModel ? 'is-active' : ''}">
+<div class="modal {delModel ? 'is-active' : ''}">
   <div class="modal-background" />
   <div class="modal-card">
     <header class="modal-card-head">
@@ -27,7 +26,8 @@
       >
     </footer>
   </div>
-</div> -->
+</div>
+
 
 <style lang="scss">
   @import "bulma/sass/base/_all.sass";
