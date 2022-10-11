@@ -3,12 +3,14 @@
 <script>
   import { useEvent } from "../methods/useEvent.js";
   const { cancel } = useEvent();
+  let title=null;
+  export function setTitle(msg){title=msg};
 </script>
 
 <div class="modal-background" />
 <div class="modal-card">
   <header class="modal-card-head">
-    <p class="modal-card-title" />
+    <p class="modal-card-title">{title}</p>
   </header>
   <section class="modal-card-body">
     <slot name="message" />
@@ -16,7 +18,7 @@
   <footer class="modal-card-foot">
     <button
       class="button is-success is-small"
-      on:click={() => dispatch("confirm")}>確定</button
+      on:click={() => null}>確定</button
     >
     <button class="button is-small" on:click={() => cancel()}>取消</button>
   </footer>

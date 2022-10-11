@@ -8,6 +8,7 @@
 
   export let guid;
   let delModel = false;
+  let cd=null;
 
   $: nofile = !!guid ? false : true;
 </script>
@@ -22,7 +23,7 @@
   {/if}
 
   <span class="icon">
-    <a href="#2">
+    <a href="#2" on:click={()=>cd.setTitle('this is test title')}>
       <icon-content-save />
     </a>
   </span>
@@ -37,7 +38,7 @@
 </div>
 
 <div class="modal {delModel ? 'is-active' : ''}">
-  <confirm-dialog on:cancel={() => (delModel = false)}>
+  <confirm-dialog on:cancel={() => (delModel = false)} bind:this={cd}>
     <span slot="message" class="is-size-3">確定要刪除這個檔案嗎？</span>
   </confirm-dialog>
 </div>
