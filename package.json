@@ -1,0 +1,26 @@
+{
+  "name": "evaluate-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "bulma": "^0.9.4",
+    "sass": "^1.53.0",
+    "svelte": "^3.51.0",
+    "svelte-preprocess": "^4.10.7",
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "node-sass": "^7.0.3",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.55.0",
+    "svelte-preprocess": "^4.10.7"
+  }
+}
