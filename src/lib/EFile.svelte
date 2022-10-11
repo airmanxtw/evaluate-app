@@ -5,7 +5,7 @@
   import "./icons/IconContentSave.svelte";
   import "./icons/IconCloseThick.svelte";
   import "./components/ConfirmDialog.svelte";
-  
+
   export let guid;
   let delModel = false;
 
@@ -36,23 +36,12 @@
   {/if}
 </div>
 
-<confirm-dialog></confirm-dialog>
+<div class="modal {delModel ? 'is-active' : ''}">
+  <confirm-dialog on:cancel={() => (delModel = false)}>
+    <span slot="message" class="is-size-3">確定要刪除這個檔案嗎？</span>
+  </confirm-dialog>
+</div>
 
-<!-- <div class="modal {delModel ? 'is-active' : ''}">
-  <div class="modal-background" />
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title" />
-    </header>
-    <section class="modal-card-body">
-        <span class="is-size-3">確定要刪除這個檔案嗎?</span>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success is-small">Save changes</button>
-      <button class="button is-small">Cancel</button>
-    </footer>
-  </div>  
-</div> -->
 <style lang="scss">
   @import "bulma/sass/base/_all.sass";
   @import "bulma/sass/utilities/_all.sass";
