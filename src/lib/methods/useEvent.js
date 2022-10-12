@@ -32,6 +32,7 @@ export function useEvent() {
    * @returns {any}
    */
   const delFile = (
+    key,
     guid,
     { deletingCallback, successCallback, errorCallback, finallyCallbcak }
   ) => {
@@ -39,6 +40,7 @@ export function useEvent() {
       component.dispatchEvent(
         new CustomEvent("delFile", {
           detail: {
+            key,
             guid,
             deleting() {
               deletingCallback();
@@ -79,13 +81,14 @@ export function useEvent() {
   };
 
   const upload = (
-    file,
+    key,file,
     { uploadingCallback, successCallback, errorCallback, finallyCallbcak }
   ) => {
     component.dispatchEvent &&
       component.dispatchEvent(
         new CustomEvent("upload", {
           detail: {
+            key,
             file,
             uploading() {
               uploadingCallback();

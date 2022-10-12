@@ -12,6 +12,7 @@
   export let guid;
   export let filename;
   export let accept = ".";
+  export let key = null;
   export let limit = 1024 * 1024 * 1;
 
   let downloadUrl;
@@ -60,7 +61,7 @@
 
 <confirm-dialog
   on:confirm={() =>
-    delFile(guid, {
+    delFile(key, guid, {
       deletingCallback() {
         cd.processMsg("檔案刪除中...");
       },
@@ -89,7 +90,7 @@
   on:confirm={() => {
     if (!!selectFile) {
       if (selectFile.size <= limitSize) {
-        upload(selectFile, {
+        upload(key, selectFile, {
           uploadingCallback() {
             up.processMsg("檔案上傳中...");
           },
