@@ -4,6 +4,7 @@
 
 ## Usage
 ```html 
+<script type="module" crossorigin src="evaluate-app.0.1.0.js"></script>
 <body>
     <e-file guid="12" filename="a.pdf" accept=".jpg,.jpeg,.pdf" limit="2097152">
       <ul>
@@ -32,7 +33,7 @@
           const url = `https://xxxx.xxxx.edu.tw/app?guid=${res.detail.guid}`;
           res.detail.downloadUrl(url);
         });
-        
+
         efile.addEventListener("upload", (res) => {
           res.detail.uploading();
           setTimeout(() => {
